@@ -1,4 +1,7 @@
+
+
 Project:{
+    
     
     """ 멤버쉽 테이블 """
     member:{
@@ -11,7 +14,9 @@ Project:{
         member_ticket:varchar2(20){constraint:foreign_key}
         member_goods:varchar2(20){constraint:foreign_key}
         
+        
     }
+    
     """ 회원 테이블 """
     user:{
         shape:sql_table
@@ -45,12 +50,13 @@ Project:{
         shape:sql_table
         goods_no:int{constraint:primary_key}
     }
-    user.user_no <-> member.user_no
-    user.user_no <-> order_ticket.user_no
-    user.user_no <-> order_goods.user_no
+    user.user_no <-> member.user_no : user_no
+    user.user_no <-> order_ticket.user_no : user_no
+    user.user_no <-> order_goods.user_no : user_no
 
-    member.member_goods <-> order_goods.member_goods
-    member.member_ticket <-> order_ticket.member_ticket
+    member.member_goods <-> order_goods.member_goods :member_goods
+    member.member_ticket <-> order_ticket.member_ticket : member.ticket
 
-    order_goods.goods_no <-> goods.goods_no
+    order_goods.goods_no <-> goods.goods_no :goods_no
+    
 }
