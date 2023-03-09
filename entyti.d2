@@ -1,0 +1,17 @@
+member:{
+    shape:sql_table
+
+    user_no:int{constraint:primary_key}
+    buy_list:varchar2(100)
+    buy_sum:int
+    user_grade:varchar2(20)
+
+}
+
+user:{
+    shape:sql_table
+
+    user_no:varchar2(10){constraint:primary_key}
+}
+
+member.user_no -> user.user_no
