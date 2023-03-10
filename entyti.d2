@@ -1,9 +1,10 @@
 
+PROJECT:{
 
-Project:{
-    
-    
-    """ 멤버쉽 테이블 """
+    MEMBER:{
+        
+        
+        """ 멤버쉽 테이블 """
     member:{
         shape:sql_table
         
@@ -31,32 +32,45 @@ Project:{
         user_email:varchar2(30){constraint:not null}
         user_addr:varchar2(100){constraint:not null}
         user_key:varchar2(14){constraint:unique}
-
+        
     }
-    order_ticket:{
-        shape:sql_table
+}
+ORDER:{
 
-        user_no:int{constraint:primary_key}
-        member_ticket:varchar2(20){constraint:foreign_key}
+    TICKET:{
+        
+        order_ticket:{
+            shape:sql_table
+            
+            user_no:int{constraint:primary_key}
+            member_ticket:varchar2(20){constraint:foreign_key}
+            ticket_no:int
+        }
+        ticket:{
+            shape:sql_table
+            ticket_no:int{constraint:primary_key}
+
+        }
     }
-    order_goods:{
-        shape:sql_table
-
-        user_no:int{constraint:primary_key}
-        member_goods:varchar2(20){constraint:foreign_key}
-        goods_no:int
+    GOODS:{
+        
+        order_goods:{
+            shape:sql_table
+            
+            user_no:int{constraint:primary_key}
+            member_goods:varchar2(20){constraint:foreign_key}
+            goods_no:int
+        }
+        goods{
+            shape:sql_table
+            goods_no:int{constraint:primary_key}
+        }
     }
-    goods{
-        shape:sql_table
-        goods_no:int{constraint:primary_key}
-    }
-    user.user_no <-> member.user_no : user_no
-    user.user_no <-> order_ticket.user_no : user_no
-    user.user_no <-> order_goods.user_no : user_no
+}
+MEMBER.member.user_no <-> MEMBER.user.user_no
 
-    member.member_goods <-> order_goods.member_goods :member_goods
-    member.member_ticket <-> order_ticket.member_ticket : member.ticket
+MEMBER.member.user_no <->ORDER.TICKET.order_ticket.user_no
+MEMBER.member.user_no <->ORDER.GOODS.order_goods.user_no
 
-    order_goods.goods_no <-> goods.goods_no :goods_no
-    
+
 }
