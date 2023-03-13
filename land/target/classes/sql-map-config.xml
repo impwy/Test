@@ -6,20 +6,11 @@
 
     <!--Alias 설정-->
     <typeAliases>
-<<<<<<< HEAD
         <typeAlias alias="member" type="com.land.myapp.user.MemberVO"/>
-=======
-
-
->>>>>>> 34f1216456ff89c5ddd8be7bf881ec21d4da9c80
     </typeAliases>
 
     <!--SQL MAPPER 설정-->
     <mappers>
-<<<<<<< HEAD
     <mapper resource="meppings/member-mapping.xml"/>
-=======
-
->>>>>>> 34f1216456ff89c5ddd8be7bf881ec21d4da9c80
     </mappers>
 </configuration>
