@@ -67,6 +67,15 @@ ORDER:{
         }
     }
 }
+BOARD:{
+    board:{
+        shape:sql_table
+        board_no:int
+        qna:varchar2(200)
+        notice:varchar2(200)
+
+    }
+}
 MEMBER.member.user_no <-> MEMBER.user.user_no
 
 MEMBER.member.user_no <->ORDER.TICKET.order_ticket.user_no

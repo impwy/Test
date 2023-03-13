@@ -1,0 +1,31 @@
+MainPage{
+
+
+}
+
+main2{
+    main2 -> main
+info ->time
+info -> notice
+info -> come
+info -> map
+
+price -> price_info
+price -> discount
+
+event -> pr
+event -> calender
+
+around -> attraction
+around ->food
+around -> utility
+
+goods -> mall
+
+customer ->qna
+
+member -> login 
+member -> register
+
+
+}
