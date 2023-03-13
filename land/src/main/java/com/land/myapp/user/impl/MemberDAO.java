@@ -5,13 +5,13 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("memberDAO")
+/*@Service("memberDAO")*/
 public class MemberDAO {
 
-    @Autowired
+  /*  @Autowired
     private SqlSessionTemplate mybatis;
 
     public void insesrtMember(MemberVO vo) {
         mybatis.insert("MemberVO.insertVO",vo);
-    }
+    }*/
 }
