@@ -11,6 +11,7 @@
 
 <script>
 
+//맵생성
 
 var map = new naver.maps.Map('map', {
     center: new naver.maps.LatLng(37.292451, 127.205000),
@@ -20,6 +21,35 @@ var map = new naver.maps.Map('map', {
         style: naver.maps.MapTypeControlStyle.DROPDOWN
     }
 });
+
+// 마커
+var marker = new naver.maps.Marker({
+    position: new naver.maps.LatLng(37.3595704, 127.105399),
+    map: map
+});
+
+naver.maps.Event.addListener(map, 'click', function(e) {
+    marker.setPosition(e.latlng);
+});
+
+//맵에 마커 이미지 적용
+var boundary = naver.maps.LatLngBounds.bounds(new naver.maps.LatLng(37.3724620, 127.1051714), new naver.maps.LatLng(37.3542795, 127.1174332));
+var unarySpot = new naver.maps.LatLng(37.3637770, 127.1174332);
+
+var map = new naver.maps.Map(document.getElementById('map'), { zoom: 10 });
+    map.fitBounds(boundary);
+
+var unarySpotMarker = new naver.maps.Marker({
+    position: unarySpot,
+    map: map,
+    title: 'Unary Spot!!',
+    icon: {
+        content: '<img src="./img/pin_default.png" alt="" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; max-width: none; max-height: none; -webkit-user-select: none; position: absolute; width: 22px; height: 35px; left: 0px; top: 0px;">',
+        size: new naver.maps.Size(22, 35),
+        anchor: new naver.maps.Point(11, 35)
+    }
+});
+
 
 </script>
 
