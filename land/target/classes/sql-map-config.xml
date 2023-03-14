@@ -6,7 +6,7 @@
 
     <!--Alias 설정-->
     <typeAliases>
-        <typeAlias alias="member" type="com.land.myapp.user.MemberVO"/>
+        <typeAlias alias="member" type="com.land.myapp.model.user.MemberVO"/>
     </typeAliases>
 
     <!--SQL MAPPER 설정-->

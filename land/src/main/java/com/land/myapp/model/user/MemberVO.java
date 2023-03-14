@@ -1,4 +1,4 @@
-package com.land.myapp.user;
+package com.land.myapp.model.user;
 
 import java.sql.Date;
 
